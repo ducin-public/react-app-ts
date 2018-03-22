@@ -1,0 +1,226 @@
+{
+  "title": "Profiles Iterator",
+  "type": "object",
+  "description": "http://json-schema-faker.js.org/#gist/f568d8b9d21b9404b4bbf504ffdead4a/0.4.3",
+  "properties": {
+    "nextPageToken": {
+      "type": "string",
+      "faker": "random.uuid"
+    },
+    "records": {
+      "title": "Profiles",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "faker": "random.uuid"
+          },
+          "userName": {
+            "type": "string",
+            "faker": "internet.userName"
+          },
+          "firstName": {
+            "type": "string",
+            "faker": "name.firstName"
+          },
+          "lastName": {
+            "type": "string",
+            "faker": "name.lastName"
+          },
+          "middleName": {
+            "type": "string",
+            "faker": "name.firstName"
+          },
+          "preferredName": {
+            "type": "string",
+            "faker": {
+              "fake": "{{commerce.productAdjective}} {{name.firstName}}"
+            }
+          },
+          "email": {
+            "type": "string",
+            "faker": "internet.email"
+          },
+          "alternateEmails": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "faker": "internet.email"
+            }
+          },
+          "phone": {
+            "type": "object",
+            "properties": {
+              "office": {
+                "type": "string",
+                "faker": "phone.phoneNumber"
+              },
+              "home": {
+                "type": "string",
+                "faker": "phone.phoneNumber"
+              },
+              "mobile": {
+                "type": "string",
+                "faker": "phone.phoneNumber"
+              }
+            },
+            "additionalProperties": false
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "line1": {
+                "type": "string",
+                "faker": "address.streetAddress"
+              },
+              "line2": {
+                "type": "string",
+                "faker": "address.streetSuffix"
+              },
+              "city": {
+                "type": "string",
+                "faker": "address.city"
+              },
+              "state": {
+                "type": "string",
+                "faker": "address.county"
+              },
+              "country": {
+                "type": "string",
+                "faker": "address.countryCode"
+              },
+              "postalCode": {
+                "type": "string",
+                "faker": "address.zipCode"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "line1",
+              "line2",
+              "city",
+              "state",
+              "country",
+              "postalCode"
+            ]
+          },
+          "locale": {
+            "enum": [
+              "pl-PL",
+              "en-US"
+            ]
+          },
+          "timezone": {
+            "enum": [
+              "Central European Standard Time",
+              "Romance Standard Time",
+              "GMT Standard Time",
+              "UTC"
+            ]
+          },
+          "photoURL": {
+            "type": "string",
+            "faker": {
+              "fake": "{{random.uuid}}.jpg"
+            }
+          },
+          "principalName": {
+            "type": "string",
+            "faker": {
+              "fake": "{{name.firstName}}{{name.lastName}}@{{company.bsNoun}}"
+            }
+          },
+          "name": {
+            "type": "string",
+            "faker": {
+              "fake": "{{name.firstName}} {{name.lastName}}"
+            }
+          },
+          "officeAddress": {
+            "type": "string",
+            "faker": {
+              "fake": "{{address.secondaryAddress}}"
+            }
+          },
+          "company": {
+            "type": "string",
+            "faker": {
+              "fake": "{{company.companyName}}"
+            }
+          },
+          "description": {
+            "type": "string",
+            "faker": {
+              "fake": "{{lorem.sentences}}"
+            }
+          },
+          "fax": {
+            "type": "string",
+            "faker": {
+              "fake": "{{phone.phoneNumber}}"
+            }
+          },
+          "initials": {
+            "type": "string",
+            "faker": {
+              "fake": "{{hacker.abbreviation}}"
+            }
+          },
+          "manager": {
+            "type": "string",
+            "faker": {
+              "fake": "{{name.firstName}} {{name.lastName}}"
+            }
+          },
+          "notes": {
+            "type": "string",
+            "faker": {
+              "fake": "{{lorem.sentences}}"
+            }
+          },
+          "title": {
+            "type": "string",
+            "faker": {
+              "fake": "{{name.jobTitle}}"
+            }
+          },
+          "webPage": {
+            "type": "string",
+            "faker": {
+              "fake": "{{internet.url}}"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "userName",
+          "firstName",
+          "lastName",
+          "email",
+          "alternateEmails",
+          "phone",
+          "address",
+          "locale",
+          "timezone",
+          "principalName",
+          "name",
+          "officeAddress",
+          "company",
+          "description",
+          "fax",
+          "initials",
+          "manager",
+          "notes",
+          "title",
+          "webPage"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

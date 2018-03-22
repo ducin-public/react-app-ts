@@ -1,0 +1,67 @@
+description: |
+  Collection of all user profiles.
+  A _user_ is a first-class citizen of this system. Each user has a profile, which can be more or less detailed.
+
+get:
+  description: Fetch collection of profiles
+  is: [ hasCustomerId ]
+  queryParameters:
+    limit:
+      description: limits response collection size down to given value
+      type: number
+      required: false
+    nextPageToken:
+      description: token to fetch next page of records
+      type: string
+      required: false
+  responses:
+    200:
+      (dts): ProfileCollection
+      body:
+        application/json:
+          type: !include profiles/profile-collection.schema.json
+          example: !include profiles/profile-collection.example.json
+
+post:
+  description: Create a new profile
+  is: [ hasCustomerId ]
+
+/import:
+  post:
+    description: Batch import user profiles from JSON
+    is: [ hasCustomerId ]
+    body:
+      application/json:
+        type: !include profiles/import-request.schema.json
+        example: !include profiles/import-request.example.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include profiles/import.schema.json
+            example: !include profiles/import.example.json
+
+/{id}:
+  description: A single profile defined by its `id`.
+  uriParameters:
+    id:
+      type: integer
+      description: profile primary key
+
+  get:
+    description: Fetch a single profile
+    is: [ hasCustomerId ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include profiles/profile.schema.json
+            example: !include profiles/profile.example.json
+
+  put:
+    description: Update a single profile
+    is: [ hasCustomerId ]
+
+  delete:
+    description: Delete a single profile
+    is: [ hasCustomerId ]

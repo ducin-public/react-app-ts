@@ -1,0 +1,21 @@
+{
+  "name": "example-service-contract",
+  "description": "Example Service API Contract",
+  "author": "Tomasz Ducin <tomasz@ducin.it>",
+  "scripts": {
+    "mock-generate": "node generate.js",
+    "mock-api": "json-server db.json --routes routes.json -p 3003 -d 750 --middlewares ./params-override.js",
+    "contract-typedef": "rimraf typedef && raml2ts -i api/index.raml -o typedef",
+    "contract-typedef-manual": "json2ts api/profiles/profile.schema.json > typedef/Profile.d.ts",
+    "contract-docs": "raml2html api/index.raml > docs/index.html"
+  },
+  "dependencies": {
+    "json-schema-faker": "0.4.3",
+    "json-schema-to-typescript": "^5.4.0",
+    "json-server": "^0.12.1",
+    "raml-to-typescript": "^0.1.1",
+    "raml2html": "^7.0.0",
+    "rimraf": "^2.6.2",
+    "yargs": "^11.0.0"
+  }
+}

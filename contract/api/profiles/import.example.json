@@ -1,0 +1,24 @@
+{
+  "successCount": 6,
+  "skippedCount": 1,
+  "errors": [
+    {
+      "loginName": "User1",
+      "email": "user1@tenant.com",
+      "invalidFields": ["firstName", "lastName"],
+      "recordJson": "{ \"loginName\": \"User1\", \"email\": \"user1@tenant.com\" }"
+    },
+    {
+      "loginName": "User2",
+      "email": "user2@tenant.com",
+      "invalidFields": ["lastName"],
+      "recordJson": "{ \"loginName\": \"User1\", \"email\": \"user2@tenant.com\", \"firstName\": \"User\" }"
+    },
+    {
+      "loginName": "User3",
+      "email": "user3@tenant.com",
+      "invalidFields": ["firstName"],
+      "recordJson": "{ \"loginName\": \"User1\", \"email\": \"user3@tenant.com\", \"lastName\": \"2\" }"
+    }
+  ]
+}

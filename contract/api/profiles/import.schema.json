@@ -1,0 +1,50 @@
+{
+  "title": "Profile Import Result",
+  "type": "object",
+  "properties": {
+    "successCount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "skippedCount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "loginName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recordJson": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "loginName",
+          "email",
+          "invalidFields",
+          "recordJson"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "successCount",
+    "skippedCount",
+    "errors"
+  ]
+}

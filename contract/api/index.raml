@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: Example Service
+baseUri: http://{hostName}.example.acme.com
+baseUriParameters:
+  hostName:
+    description: The name of the host
+documentation:
+  - title: REST API
+    content: |
+      This is a placeholder for your Example Service API contract description.
+
+traits: !include headers.raml
+
+/users:
+
+  /profiles: !include profiles.raml

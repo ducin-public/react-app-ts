@@ -1,0 +1,137 @@
+{
+  "title": "Profiles Import Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "Name": {
+        "type": "string",
+        "faker": "name.findName"
+      },
+      "PrincipalName": {
+        "type": "string",
+        "faker": "name.findName"
+      },
+      "LoginName": {
+        "type": "string",
+        "faker": "internet.userName"
+      },
+      "LastLogon": {
+        "type": "string",
+        "faker": "date.past"
+      },
+      "FirstName": {
+        "type": "string",
+        "faker": "name.firstName"
+      },
+      "LastName": {
+        "type": "string",
+        "faker": "name.lastName"
+      },
+      "DisplayName": {
+        "type": "string",
+        "faker": "name.findName"
+      },
+      "Mobile": {
+        "type": "string",
+        "faker": "phone.phoneNumber"
+      },
+      "PostalCode": {
+        "type": "string",
+        "faker": "address.zipCode"
+      },
+      "TelephoneNumber": {
+        "type": "string",
+        "faker": "phone.phoneNumber"
+      },
+      "WebPage": {
+        "type": "string",
+        "faker": "internet.domainName"
+      },
+      "Email": {
+        "type": "string",
+        "faker": "internet.email"
+      },
+      "Fax": {
+        "type": "string",
+        "faker": "phone.phoneNumber"
+      },
+      "Description": {
+        "type": "string",
+        "faker": "lorem.sentence"
+      },
+      "Notes": {
+        "type": "string",
+        "faker": "lorem.sentence"
+      },
+      "Title": {
+        "type": "string",
+        "faker": "name.jobTitle"
+      },
+      "Department": {
+        "type": "string",
+        "faker": "commerce.department"
+      },
+      "Office": {
+        "type": "string",
+        "faker": "address.city"
+      },
+      "Company": {
+        "type": "string",
+        "faker": "company.companyName"
+      },
+      "HomePhone": {
+        "type": "string",
+        "faker": "phone.phoneNumber"
+      },
+      "Initials": {
+        "type": "string",
+        "faker": "name.prefix"
+      },
+      "Street": {
+        "type": "string",
+        "faker": "address.streetAddress"
+      },
+      "City": {
+        "type": "string",
+        "faker": "address.city"
+      },
+      "State": {
+        "type": "string",
+        "faker": "address.state"
+      },
+      "Country": {
+        "type": "string",
+        "faker": "address.country"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "Name",
+      "PrincipalName",
+      "LoginName",
+      "LastLogon",
+      "FirstName",
+      "LastName",
+      "DisplayName",
+      "Mobile",
+      "PostalCode",
+      "TelephoneNumber",
+      "WebPage",
+      "Email",
+      "Fax",
+      "Description",
+      "Notes",
+      "Title",
+      "Department",
+      "Office",
+      "Company",
+      "HomePhone",
+      "Initials",
+      "Street",
+      "City",
+      "State",
+      "Country"
+    ]
+  }
+}
